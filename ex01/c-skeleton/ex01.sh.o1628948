@@ -1,0 +1,47 @@
+### Starting TaskPrologue of job 1628948 on f0832 at Mon Oct 21 11:38:50 CEST 2024
+#   SLURM_JOB_NODELIST=f0832
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=
+#   SLURM_NPROCS=
+#   SLURM_TASKS_PER_NODE=72
+#   SLURM_JOB_CPUS_PER_NODE=72
+#   SLURM_EXPORT_ENV=NONE
+Running on cores 0-71 with governor powersave
+### Finished TaskPrologue
+===>  DIST CLEAN
+===>  COMPILE  build/ICC/timing.o
+icc -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./build/ICC -fast -xHost -qopt-streaming-stores=always -std=c99 -ffreestanding  ./src/timing.c -o build/ICC/timing.o
+icc: remark #10441: The Intel(R) C++ Compiler Classic (ICC) is deprecated and will be removed from product release in the second half of 2023. The Intel(R) oneAPI DPC++/C++ Compiler (ICX) is the recommended compiler moving forward. Please transition to use this compiler. Use '-diag-disable=10441' to disable this message.
+===>  COMPILE  build/ICC/main.o
+icc -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./build/ICC -fast -xHost -qopt-streaming-stores=always -std=c99 -ffreestanding  ./src/main.c -o build/ICC/main.o
+icc: remark #10441: The Intel(R) C++ Compiler Classic (ICC) is deprecated and will be removed from product release in the second half of 2023. The Intel(R) oneAPI DPC++/C++ Compiler (ICX) is the recommended compiler moving forward. Please transition to use this compiler. Use '-diag-disable=10441' to disable this message.
+===>  COMPILE  build/ICC/affinity.o
+icc -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./build/ICC -fast -xHost -qopt-streaming-stores=always -std=c99 -ffreestanding  ./src/affinity.c -o build/ICC/affinity.o
+icc: remark #10441: The Intel(R) C++ Compiler Classic (ICC) is deprecated and will be removed from product release in the second half of 2023. The Intel(R) oneAPI DPC++/C++ Compiler (ICX) is the recommended compiler moving forward. Please transition to use this compiler. Use '-diag-disable=10441' to disable this message.
+===>  COMPILE  build/ICC/allocate.o
+icc -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./build/ICC -fast -xHost -qopt-streaming-stores=always -std=c99 -ffreestanding  ./src/allocate.c -o build/ICC/allocate.o
+icc: remark #10441: The Intel(R) C++ Compiler Classic (ICC) is deprecated and will be removed from product release in the second half of 2023. The Intel(R) oneAPI DPC++/C++ Compiler (ICX) is the recommended compiler moving forward. Please transition to use this compiler. Use '-diag-disable=10441' to disable this message.
+===>  LINKING  exe-ICC
+icc: remark #10441: The Intel(R) C++ Compiler Classic (ICC) is deprecated and will be removed from product release in the second half of 2023. The Intel(R) oneAPI DPC++/C++ Compiler (ICX) is the recommended compiler moving forward. Please transition to use this compiler. Use '-diag-disable=10441' to disable this message.
+hello world sanju from f0832.nhr.fau.de
+===>  DIST CLEAN
+=== JOB_STATISTICS ===
+=== current date     : Mon Oct 21 11:38:54 CEST 2024
+= Job-ID             : 1628948 on fritz
+= Job-Name           : ex01.sh
+= Job-Command        : /home/hpc/pavl/pavl133h/PAMPI_course/ex01/c-skeleton/ex01.sh
+= Initial workdir    : /home/hpc/pavl/pavl133h/PAMPI_course/ex01/c-skeleton
+= Queue/Partition    : singlenode
+= Slurm account      : pavl with QOS=normal
+= Requested resources:  for 00:05:00
+= Elapsed runtime    : 00:00:05
+= Total RAM usage    : 0.0 GiB 
+= Node list          : f0832
+= Subm/Elig/Start/End: 2024-10-21T11:38:23 / 2024-10-21T11:38:23 / 2024-10-21T11:38:48 / 2024-10-21T11:38:53
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody          0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc         1478.8M   104.9G   209.7G        N/A   3,056      500K   1,000K        N/A    
+    /lustre              4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+======================

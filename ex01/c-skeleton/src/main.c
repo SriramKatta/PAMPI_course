@@ -14,4 +14,13 @@
 #include "allocate.h"
 #include "timing.h"
 
-int main(int argc, char** argv) { return EXIT_SUCCESS; }
+int main(int argc, char** argv)
+{
+    if (argc != 2) argv[1] = "";
+
+    char hostname[1024];
+    gethostname(hostname, sizeof(hostname));
+
+    printf("hello world %s from %s\n", argv[1], hostname);
+    return EXIT_SUCCESS;
+}
