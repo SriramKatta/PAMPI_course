@@ -18,4 +18,9 @@
 #define ABS(a) ((a) >= 0 ? (a) : -(a))
 #endif
 
+inline int rowsinrank(int rank, int size, int N)
+{
+    return N / size + ((N % size > rank) ? 1 : 0);
+}
+
 #endif // __UTIL_H_

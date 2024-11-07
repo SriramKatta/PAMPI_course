@@ -1,0 +1,20 @@
+=== JOB_STATISTICS ===
+=== current date     : Tue Nov  5 12:37:50 CET 2024
+= Job-ID             : 1647859 on fritz
+= Job-Name           : bench_internode
+= Job-Command        : /home/hpc/pavl/pavl133h/PAMPI_course/ex03/util-mpi/bash
+= Initial workdir    : /home/hpc/pavl/pavl133h/PAMPI_course/ex03/util-mpi/bash
+= Queue/Partition    : multinode
+= Slurm account      : pavl with QOS=normal
+= Requested resources:  for 10:00:00
+= Elapsed runtime    : 00:10:51
+= Total RAM usage    : 8.2 GiB 
+= Node list          : f0308
+= Subm/Elig/Start/End: 2024-11-05T12:26:53 / 2024-11-05T12:26:53 / 2024-11-05T12:26:54 / 2024-11-05T12:37:45
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody          0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc         2504.0M   104.9G   209.7G        N/A   7,249      500K   1,000K        N/A    
+    /lustre              4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+======================

@@ -12,12 +12,12 @@ unset SLURM_EXPORT_ENV
 
 module load likwid intel intelmpi
 export I_MPI_PIN=1
-export I_MPI_DEBUG=4
+export I_MPI_DEBUG=0
 export I_MPI_PIN_PROCESSOR_LIST=0-71
 
 FILENAME="result_bench_internode.csv"
 
-cd ~/PAMPI/pampi-tutorial/ex4/dmvm/mpi
+cd ~/PAMPI_course/ex03/dmvm-skeleton
 make distclean
 make
 
