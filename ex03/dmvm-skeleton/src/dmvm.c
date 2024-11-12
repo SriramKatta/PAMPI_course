@@ -26,7 +26,7 @@ double dmvm(double *restrict y,
 
     int chunksize = N / size;
     int balance = N % size;
-    int prevnode = (rank - 1) % size;
+    int prevnode = (rank - 1);
     int nextnode = (rank + 1) % size;
     if (prevnode < 0)
         prevnode = size - 1;
@@ -65,8 +65,19 @@ double dmvm(double *restrict y,
 
             if (rot != (size - 1))
             {
-                MPI_Send(x, chunksize + (balance ? 1 : 0), MPI_DOUBLE, prevnode, 0, MPI_COMM_WORLD);
-                MPI_Recv(x, chunksize + (balance ? 1 : 0), MPI_DOUBLE, nextnode, 0, MPI_COMM_WORLD, &status);
+                MPI_Send(x,
+                         chunksize + (balance ? 1 : 0),
+                         MPI_DOUBLE,
+                         prevnode,
+                         0,
+                         MPI_COMM_WORLD);
+                MPI_Recv(x,
+                         chunksize + (balance ? 1 : 0),
+                         MPI_DOUBLE,
+                         nextnode,
+                         0,
+                         MPI_COMM_WORLD,
+                         &status);
             }
         }
 #ifdef CHECK
@@ -80,6 +91,7 @@ double dmvm(double *restrict y,
             }
             fprintf(stderr, "Sum: %f\n", sum);
         }
+
 #endif
     }
     te = MPI_Wtime();
