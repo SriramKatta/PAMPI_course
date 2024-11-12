@@ -18,8 +18,8 @@ export I_MPI_PIN_PROCESSOR_LIST=0-71
 FILENAME="result_bench_internode.csv"
 
 cd ~/PAMPI_course/ex03/dmvm-skeleton
-make distclean
-make
+#make distclean
+#make
 
 rm $FILENAME
 touch $FILENAME

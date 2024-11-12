@@ -16,9 +16,9 @@ export I_MPI_DEBUG=0
 
 FILENAME="result_bench_intranode.csv"
 
-cd ~/PAMPI/pampi-tutorial/ex4/dmvm/mpi
-make distclean
-make
+cd ~/PAMPI_course/ex03/dmvm-skeleton
+#make distclean
+#make
 
 rm $FILENAME
 touch $FILENAME
@@ -30,8 +30,8 @@ _iterate() {
         np_1=$(($npn - 1))
         export I_MPI_PIN_PROCESSOR_LIST=0-$np_1
 
-        result="$(mpirun -n $npn ./exe-ICX $N $NITER)"
-        result="$(echo $result | sed 's/MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found //g')"
+        result="$(mpirun -n $npn ./exe-ICX $N $NITER | tail -n 1)"
+        #result="$(echo $result | sed 's/MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found //g')"
         
         echo $npn $result >>$FILENAME
     done
