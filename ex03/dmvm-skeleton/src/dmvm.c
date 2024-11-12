@@ -25,10 +25,10 @@ double dmvm(double *restrict y,
     MPI_Request request[2];
     MPI_Comm_size(MPI_COMM_WORLD, &size);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-    double *buff[2], *tmpbuf;
+    double *buf[2], *tmpbuf;
     double *xt = (double *)allocate(ARRAY_ALIGNMENT, (localN + 1) * sizeof(double));
-    buff[0] = x;
-    buff[1] = xt;
+    buf[0] = x;
+    buf[1] = xt;
 
     int chunksize = N / size;
     int balance = N % size;

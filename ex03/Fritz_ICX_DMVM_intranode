@@ -1,5 +1,5 @@
-### Starting TaskPrologue of job 1659104 on f0462 at Mon Nov 11 20:47:39 CET 2024
-#   SLURM_JOB_NODELIST=f0462
+### Starting TaskPrologue of job 1660099 on f0981 at Tue Nov 12 09:46:39 CET 2024
+#   SLURM_JOB_NODELIST=f0981
 #   SLURM_JOB_NUM_NODES=1
 #   SLURM_NTASKS=72
 #   SLURM_NPROCS=72
@@ -11,22 +11,22 @@ Running on cores 0-71 with governor powersave
 NOTE: If and ONLY IF you want to use likwid-perfctr you have to add '--constraint=hwperf' to your batch jobs.
       likwid-features and likwid-setFrequencies are not available. The frequency/governor can be set using SLURM features.
 === JOB_STATISTICS ===
-=== current date     : Mon Nov 11 21:04:17 CET 2024
-= Job-ID             : 1659104 on fritz
+=== current date     : Tue Nov 12 10:03:18 CET 2024
+= Job-ID             : 1660099 on fritz
 = Job-Name           : bench_intranode
 = Job-Command        : ./util-mpi/bash
 = Initial workdir    : /home/hpc/pavl/pavl133h/PAMPI_course/ex03
 = Queue/Partition    : singlenode
 = Slurm account      : pavl with QOS=normal
 = Requested resources:  for 10:00:00
-= Elapsed runtime    : 00:16:39
+= Elapsed runtime    : 00:16:40
 = Total RAM usage    : 11.1 GiB 
-= Node list          : f0462
-= Subm/Elig/Start/End: 2024-11-11T20:47:36 / 2024-11-11T20:47:36 / 2024-11-11T20:47:37 / 2024-11-11T21:04:16
+= Node list          : f0981
+= Subm/Elig/Start/End: 2024-11-12T09:46:36 / 2024-11-12T09:46:36 / 2024-11-12T09:46:37 / 2024-11-12T10:03:17
 ======================
 === Quota infos ======
     Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
     /home/woody          0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
-    /home/hpc         3839.2M   104.9G   209.7G        N/A   9,302      500K   1,000K        N/A    
+    /home/hpc         3404.0M   104.9G   209.7G        N/A   9,363      500K   1,000K        N/A    
     /lustre              4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
 ======================
