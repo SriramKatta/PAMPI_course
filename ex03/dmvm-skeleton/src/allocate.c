@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <errno.h>
 
-void* allocate (int alignment, size_t bytesize)
+void* allocate (int alignment, int bytesize)
 {
     int errorCode;
     void* ptr;

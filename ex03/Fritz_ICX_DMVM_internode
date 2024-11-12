@@ -1,0 +1,33 @@
+### Starting TaskPrologue of job 1659105 on f0658 at Mon Nov 11 20:49:54 CET 2024
+#   SLURM_JOB_NODELIST=f[0658,0763,0857,0964]
+#   SLURM_JOB_NUM_NODES=4
+#   SLURM_NTASKS=288
+#   SLURM_NPROCS=288
+#   SLURM_TASKS_PER_NODE=72(x4)
+#   SLURM_JOB_CPUS_PER_NODE=72(x4)
+#   SLURM_EXPORT_ENV=NONE
+Running on cores 0-71 with governor powersave
+### Finished TaskPrologue
+NOTE: If and ONLY IF you want to use likwid-perfctr you have to add '--constraint=hwperf' to your batch jobs.
+      likwid-features and likwid-setFrequencies are not available. The frequency/governor can be set using SLURM features.
+rm: cannot remove 'result_bench_internode.csv': No such file or directory
+=== JOB_STATISTICS ===
+=== current date     : Mon Nov 11 21:01:12 CET 2024
+= Job-ID             : 1659105 on fritz
+= Job-Name           : bench_internode
+= Job-Command        : ./util-mpi/bash
+= Initial workdir    : /home/hpc/pavl/pavl133h/PAMPI_course/ex03
+= Queue/Partition    : multinode
+= Slurm account      : pavl with QOS=normal
+= Requested resources:  for 10:00:00
+= Elapsed runtime    : 00:11:20
+= Total RAM usage    : 11.1 GiB 
+= Node list          : f[0658,0763,0857,0964]
+= Subm/Elig/Start/End: 2024-11-11T20:47:42 / 2024-11-11T20:47:42 / 2024-11-11T20:49:51 / 2024-11-11T21:01:11
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody          0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc         3839.2M   104.9G   209.7G        N/A   9,302      500K   1,000K        N/A    
+    /lustre              4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+======================

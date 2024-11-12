@@ -1,0 +1,47 @@
+### Starting TaskPrologue of job 1657433 on f1074 at Mon Nov 11 13:46:27 CET 2024
+#   SLURM_JOB_NODELIST=f1074
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=72
+#   SLURM_NPROCS=72
+#   SLURM_TASKS_PER_NODE=72
+#   SLURM_JOB_CPUS_PER_NODE=72
+#   SLURM_EXPORT_ENV=NONE
+Running on cores 0-71 with governor powersave
+### Finished TaskPrologue
+NOTE: If and ONLY IF you want to use likwid-perfctr you have to add '--constraint=hwperf' to your batch jobs.
+      likwid-features and likwid-setFrequencies are not available. The frequency/governor can be set using SLURM features.
+===>  CLEAN
+===>  DIST CLEAN
+===>  COMPILE  build/ICX/timing.o
+mpiicx -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./build/ICX -O3 -xHost -qopt-zmm-usage=high -std=c99  -Wno-unused-command-line-argument ./src/timing.c -o build/ICX/timing.o
+===>  COMPILE  build/ICX/main.o
+mpiicx -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./build/ICX -O3 -xHost -qopt-zmm-usage=high -std=c99  -Wno-unused-command-line-argument ./src/main.c -o build/ICX/main.o
+===>  COMPILE  build/ICX/affinity.o
+mpiicx -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./build/ICX -O3 -xHost -qopt-zmm-usage=high -std=c99  -Wno-unused-command-line-argument ./src/affinity.c -o build/ICX/affinity.o
+===>  COMPILE  build/ICX/allocate.o
+mpiicx -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./build/ICX -O3 -xHost -qopt-zmm-usage=high -std=c99  -Wno-unused-command-line-argument ./src/allocate.c -o build/ICX/allocate.o
+===>  COMPILE  build/ICX/dmvm.o
+mpiicx -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./build/ICX -O3 -xHost -qopt-zmm-usage=high -std=c99  -Wno-unused-command-line-argument ./src/dmvm.c -o build/ICX/dmvm.o
+===>  LINKING  exe-ICX
+rm: cannot remove 'result_bench_memdomain.csv': No such file or directory
+Error: Insufficient memory to fulfill the request
+=== JOB_STATISTICS ===
+=== current date     : Mon Nov 11 17:04:34 CET 2024
+= Job-ID             : 1657433 on fritz
+= Job-Name           : bench_memdomain
+= Job-Command        : ../util-mpi/bash
+= Initial workdir    : /home/hpc/pavl/pavl133h/PAMPI_course/ex03/dmvm-skeleton
+= Queue/Partition    : singlenode
+= Slurm account      : pavl with QOS=normal
+= Requested resources:  for 10:00:00
+= Elapsed runtime    : 03:18:10
+= Total RAM usage    : 4.9 GiB 
+= Node list          : f1074
+= Subm/Elig/Start/End: 2024-11-11T13:46:22 / 2024-11-11T13:46:22 / 2024-11-11T13:46:24 / 2024-11-11T17:04:34
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody          0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc         3848.3M   104.9G   209.7G        N/A   9,293      500K   1,000K        N/A    
+    /lustre              4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+======================
