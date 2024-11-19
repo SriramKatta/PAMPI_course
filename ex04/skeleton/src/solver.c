@@ -94,8 +94,10 @@ void getResult(Solver *solver)
     MPI_Gatherv(sendbuffer, cnt, MPI_DOUBLE, p, rcvCounts, displs, MPI_DOUBLE, 0, MPI_COMM_WORLD);
     if (solver->rank == 0)
     {
+        free(solver->p);
+        solver->p = p;
         writeResult(solver, "p.dat");
-        free(p);
+        //free(p);
     }
 }
 
@@ -243,7 +245,7 @@ void solve(Solver *solver)
     }
 }
 
-void writeResult(Solver *solver, char *filename)
+void writeResult(Solver *solver,char *filename)
 {
     int imax = solver->imax;
     int jmax = solver->jmax;

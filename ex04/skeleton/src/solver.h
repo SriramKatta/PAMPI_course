@@ -23,6 +23,6 @@ typedef struct {
 
 extern void initSolver(Solver*, Parameter*, int problem);
 extern void getResult(Solver*);
-extern void writeResult(Solver*, char*);
+extern void writeResult(Solver*,char*);
 extern void solve(Solver*);
 #endif
