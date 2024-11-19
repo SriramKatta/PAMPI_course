@@ -33,10 +33,10 @@ static void exchange(Solver *solver)
     if (solver->rank + 1 < solver->size)
     {
         int top = solver->rank + 1;
-        double *src = (solver->p) + (solver->jmaxLocal) + (solver->imax + 2) + 1;
-        double *dst = (solver->p) + (solver->jmaxLocal + 1) + (solver->imax + 2) + 1;
-        MPI_Isend(src, solver->imax, MPI_DOUBLE, top, 1, MPI_COMM_WORLD, requests + 0);
-        MPI_Irecv(dst, solver->imax, MPI_DOUBLE, top, 2, MPI_COMM_WORLD, requests + 1);
+        double *src = (solver->p) + (solver->jmaxLocal) * (solver->imax + 2) + 1;
+        double *dst = (solver->p) + (solver->jmaxLocal + 1) * (solver->imax + 2) + 1;
+        MPI_Isend(src, solver->imax, MPI_DOUBLE, top, 1, MPI_COMM_WORLD, &requests[0]);
+        MPI_Irecv(dst, solver->imax, MPI_DOUBLE, top, 2, MPI_COMM_WORLD, &requests[1]);
     }
     /* exchange ghost cells with bottom neighbor */
     if (solver->rank > 0)
@@ -44,8 +44,8 @@ static void exchange(Solver *solver)
         int bottom = solver->rank - 1;
         double *src = (solver->p) + (solver->imax + 2) + 1;
         double *dst = (solver->p) + 1;
-        MPI_Isend(src, solver->imax, MPI_DOUBLE, bottom, 2, MPI_COMM_WORLD, requests + 2);
-        MPI_Irecv(dst, solver->imax, MPI_DOUBLE, bottom, 1, MPI_COMM_WORLD, requests + 3);
+        MPI_Isend(src, solver->imax, MPI_DOUBLE, bottom, 2, MPI_COMM_WORLD, &requests[2]);
+        MPI_Irecv(dst, solver->imax, MPI_DOUBLE, bottom, 1, MPI_COMM_WORLD, &requests[3]);
     }
     MPI_Waitall(4, requests, MPI_STATUSES_IGNORE);
 }
@@ -56,7 +56,6 @@ void getResult(Solver *solver)
     int *rcvCounts, *displs;
 
     if (solver->rank == 0)
-        ;
     {
         p = allocate(64, (solver->imax + 2) * (solver->jmax + 2) * sizeof(double));
         rcvCounts = (int *)malloc(solver->size * sizeof(int));
@@ -91,8 +90,8 @@ void getResult(Solver *solver)
     {
         sendbuffer = solver->p;
     }
-    
-    MPI_Gatherv(sendbuffer, cnt, MPI_DOUBLE, p, rcvCounts, displs, MPI_DOUBLE,0, MPI_COMM_WORLD);
+
+    MPI_Gatherv(sendbuffer, cnt, MPI_DOUBLE, p, rcvCounts, displs, MPI_DOUBLE, 0, MPI_COMM_WORLD);
     if (solver->rank == 0)
     {
         writeResult(solver, "p.dat");
@@ -225,7 +224,7 @@ void solve(Solver *solver)
         }
 
         MPI_Allreduce(MPI_IN_PLACE, &res, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
-        res /= (double)(imax * jmax);
+        res = res / (double)(imax * jmax);
 #ifdef DEBUG
         if (solver->rank == 0)
         {

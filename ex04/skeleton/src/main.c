@@ -43,7 +43,6 @@ int main(int argc, char **argv)
     startTime = getTimeStamp();
     solve(&solver);
     endTime = getTimeStamp();
-    writeResult(&solver, "p.dat");
     getResult(&solver);
 
     if (rank == 0)
