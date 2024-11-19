@@ -12,7 +12,7 @@
 #include "parameter.h"
 #include "solver.h"
 
-#include <mpi.h>
+#include "mpi.h"
 
 #define PI 3.14159265358979323846
 #define P(i, j) p[(j) * (imax + 2) + (i)]
@@ -54,27 +54,48 @@ void getResult(Solver *solver)
 {
     double *p = NULL;
     int *rcvCounts, *displs;
-    int count = (solver->jmaxLocal) * (solver->imax + 2) if (solver->rank == 0)
+
+    if (solver->rank == 0)
+        ;
     {
         p = allocate(64, (solver->imax + 2) * (solver->jmax + 2) * sizeof(double));
         rcvCounts = (int *)malloc(solver->size * sizeof(int));
         displs = (int *)malloc(solver->size * sizeof(int));
-        rcvCounts[0] = ;
-        displs[0] = ;
+    }
+    int cnt = solver->jmaxLocal * (solver->imax + 2);
+    if (solver->rank == 0 && solver->size == 1)
+    {
+        cnt = (solver->jmaxLocal + 2) * (solver->imax + 2);
+    }
+    else if (solver->rank == 0 || solver->rank == (solver->size - 1))
+    {
+        cnt = (solver->jmaxLocal + 1) * (solver->imax + 2);
+    }
+
+    MPI_Gather(&cnt, 1, MPI_INTEGER, rcvCounts, 1, MPI_INTEGER, 0, MPI_COMM_WORLD);
+
+    if (solver->rank == 0)
+    {
+        displs[0] = 0;
         int cursor = rcvCounts[0];
+
         for (int i = 1; i < solver->size; i++)
         {
-            rcvCounts[i] =
-                displs[i] = cursor;
+            displs[i] = cursor;
             cursor += rcvCounts[i];
         }
     }
-    int cnt = ;
-    double *sendbuffer = ;
-    MPI_Gatherv();
+
+    double *sendbuffer = solver->p + (solver->imax + 2);
     if (solver->rank == 0)
     {
-        writeResult(solver, p, "p.dat");
+        sendbuffer = solver->p;
+    }
+    
+    MPI_Gatherv(sendbuffer, cnt, MPI_DOUBLE, p, rcvCounts, displs, MPI_DOUBLE,0, MPI_COMM_WORLD);
+    if (solver->rank == 0)
+    {
+        writeResult(solver, "p.dat");
         free(p);
     }
 }
@@ -193,7 +214,7 @@ void solve(Solver *solver)
         {
             for (int i = 1; i < imax + 1; i++)
             {
-                P(i, jmaxLocal + 1) = P(i, jmaxLocal);
+                P(i, jmaxlocal + 1) = P(i, jmaxlocal);
             }
         }
 

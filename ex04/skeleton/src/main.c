@@ -15,27 +15,40 @@
 #include "solver.h"
 #include "timing.h"
 
-int main(int argc, char** argv)
+#include <mpi.h>
+
+int main(int argc, char **argv)
 {
     double startTime, endTime;
+    int rank;
     Parameter params;
     Solver solver;
+
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     initParameter(&params);
 
-    if (argc < 2) {
+    if (argc != 2)
+    {
         printf("Usage: %s <configFile>\n", argv[0]);
+        MPI_Finalize();
         exit(EXIT_SUCCESS);
     }
+
     readParameter(&params, argv[1]);
-    printParameter(&params);
+    if (rank == 0)
+        printParameter(&params);
 
     initSolver(&solver, &params, 2);
     startTime = getTimeStamp();
     solve(&solver);
     endTime = getTimeStamp();
     writeResult(&solver, "p.dat");
+    getResult(&solver);
 
-    printf("Walltime %.2fs\n", endTime - startTime);
+    if (rank == 0)
+        printf("Walltime %.2fs\n", endTime - startTime);
 
+    MPI_Finalize();
     return EXIT_SUCCESS;
 }
