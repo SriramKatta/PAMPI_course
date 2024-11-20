@@ -44,9 +44,10 @@ int main(int argc, char **argv)
     solve(&solver);
     endTime = getTimeStamp();
     getResult(&solver);
+    
 
     if (rank == 0)
-        printf("Walltime %.2fs\n", endTime - startTime);
+        printf("Walltime %.2f s\n", endTime - startTime);
 
     MPI_Finalize();
     return EXIT_SUCCESS;

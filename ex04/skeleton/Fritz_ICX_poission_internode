@@ -1,0 +1,193 @@
+### Starting TaskPrologue of job 1688120 on f0421 at Tue Nov 19 14:23:53 CET 2024
+#   SLURM_JOB_NODELIST=f0421
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=
+#   SLURM_NPROCS=
+#   SLURM_TASKS_PER_NODE=72
+#   SLURM_JOB_CPUS_PER_NODE=72
+#   SLURM_EXPORT_ENV=NONE
+Running on cores 0-71 with governor powersave
+### Finished TaskPrologue
+NOTE: If and ONLY IF you want to use likwid-perfctr you have to add '--constraint=hwperf' to your batch jobs.
+      likwid-features and likwid-setFrequencies are not available. The frequency/governor can be set using SLURM features.
+===>  CLEAN
+===>  DIST CLEAN
+===>  COMPILE  ICC/timing.o
+mpiicx -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./ICC -O3 -xHost -qopt-zmm-usage=high -std=c99  ./src/timing.c -o ICC/timing.o
+icx: warning: -Xlinker --enable-new-dtags: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker -rpath: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker /apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib/release: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker -rpath: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker /apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lmpifort: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lmpi: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -ldl: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lrt: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lpthread: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: argument unused during compilation: '-L/apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib/release' [-Wunused-command-line-argument]
+icx: warning: argument unused during compilation: '-L/apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib' [-Wunused-command-line-argument]
+===>  COMPILE  ICC/main.o
+mpiicx -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./ICC -O3 -xHost -qopt-zmm-usage=high -std=c99  ./src/main.c -o ICC/main.o
+icx: warning: -Xlinker --enable-new-dtags: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker -rpath: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker /apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib/release: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker -rpath: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker /apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lmpifort: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lmpi: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -ldl: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lrt: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lpthread: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: argument unused during compilation: '-L/apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib/release' [-Wunused-command-line-argument]
+icx: warning: argument unused during compilation: '-L/apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib' [-Wunused-command-line-argument]
+===>  COMPILE  ICC/solver.o
+mpiicx -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./ICC -O3 -xHost -qopt-zmm-usage=high -std=c99  ./src/solver.c -o ICC/solver.o
+icx: warning: -Xlinker --enable-new-dtags: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker -rpath: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker /apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib/release: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker -rpath: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker /apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lmpifort: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lmpi: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -ldl: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lrt: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lpthread: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: argument unused during compilation: '-L/apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib/release' [-Wunused-command-line-argument]
+icx: warning: argument unused during compilation: '-L/apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib' [-Wunused-command-line-argument]
+===>  COMPILE  ICC/affinity.o
+mpiicx -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./ICC -O3 -xHost -qopt-zmm-usage=high -std=c99  ./src/affinity.c -o ICC/affinity.o
+icx: warning: -Xlinker --enable-new-dtags: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker -rpath: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker /apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib/release: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker -rpath: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker /apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lmpifort: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lmpi: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -ldl: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lrt: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lpthread: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: argument unused during compilation: '-L/apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib/release' [-Wunused-command-line-argument]
+icx: warning: argument unused during compilation: '-L/apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib' [-Wunused-command-line-argument]
+===>  COMPILE  ICC/allocate.o
+mpiicx -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./ICC -O3 -xHost -qopt-zmm-usage=high -std=c99  ./src/allocate.c -o ICC/allocate.o
+icx: warning: -Xlinker --enable-new-dtags: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker -rpath: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker /apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib/release: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker -rpath: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker /apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lmpifort: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lmpi: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -ldl: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lrt: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lpthread: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: argument unused during compilation: '-L/apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib/release' [-Wunused-command-line-argument]
+icx: warning: argument unused during compilation: '-L/apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib' [-Wunused-command-line-argument]
+===>  COMPILE  ICC/parameter.o
+mpiicx -c  -D_GNU_SOURCE -DARRAY_ALIGNMENT=64  -I./src/includes -I./ICC -O3 -xHost -qopt-zmm-usage=high -std=c99  ./src/parameter.c -o ICC/parameter.o
+icx: warning: -Xlinker --enable-new-dtags: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker -rpath: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker /apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib/release: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker -rpath: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -Xlinker /apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lmpifort: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lmpi: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -ldl: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lrt: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: -lpthread: 'linker' input unused [-Wunused-command-line-argument]
+icx: warning: argument unused during compilation: '-L/apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib/release' [-Wunused-command-line-argument]
+icx: warning: argument unused during compilation: '-L/apps/SPACK/0.19.1/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.10.0-ki6gcj4pr5rekayazvm4lsmvcyosce25/mpi/2021.10.0/lib' [-Wunused-command-line-argument]
+===>  LINKING  exe-ICC
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+WARN: Cannot extract OpenMP vendor from executable or commandline, assuming no OpenMP
+===>  CLEAN
+===>  DIST CLEAN
+=== JOB_STATISTICS ===
+=== current date     : Tue Nov 19 14:31:27 CET 2024
+= Job-ID             : 1688120 on fritz
+= Job-Name           : poission_internode
+= Job-Command        : /home/hpc/pavl/pavl133h/PAMPI_course/ex04/skeleton/scaling.sh
+= Initial workdir    : /home/hpc/pavl/pavl133h/PAMPI_course/ex04/skeleton
+= Queue/Partition    : singlenode
+= Slurm account      : pavl with QOS=normal
+= Requested resources:  for 10:00:00
+= Elapsed runtime    : 00:07:35
+= Total RAM usage    : 0.0 GiB 
+= Node list          : f0421
+= Subm/Elig/Start/End: 2024-11-19T14:23:49 / 2024-11-19T14:23:49 / 2024-11-19T14:23:51 / 2024-11-19T14:31:26
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody          0.0K  1000.0G  1500.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc         4423.9M   104.9G   209.7G        N/A  11,393      500K   1,000K        N/A    
+    /lustre              4.0K     0.0K     0.0K        N/A       1       80K     250K        N/A    
+======================
